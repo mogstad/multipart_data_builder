@@ -253,7 +253,6 @@
 			buildPhases = (
 				2DD5B7941B1B7C9100238EA1 /* Sources */,
 				2DD5B7951B1B7C9100238EA1 /* Frameworks */,
-				2DD5B7961B1B7C9100238EA1 /* Resources */,
 				2DD5B7D71B1B804700238EA1 /* CopyFiles */,
 			);
 			buildRules = (
@@ -290,6 +289,8 @@
 		2DD5B7841B1B7C9100238EA1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = Flow;
 				TargetAttributes = {
@@ -325,13 +326,6 @@
 
 /* Begin PBXResourcesBuildPhase section */
 		2DD5B78B1B1B7C9100238EA1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2DD5B7961B1B7C9100238EA1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
