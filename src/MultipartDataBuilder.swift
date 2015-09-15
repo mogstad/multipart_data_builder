@@ -17,10 +17,10 @@ public struct MultipartDataBuilder {
 
   /// Builds the multipart form
   /// 
-  /// :returns: the built form as NSData
+  /// - returns: the built form as NSData
   public func build() -> NSData? {
 
-    var data = NSMutableData()
+    let data = NSMutableData()
 
     for field in self.fields {
       data.appendData(self.toData("--\(self.boundary)"))
@@ -36,8 +36,8 @@ public struct MultipartDataBuilder {
 
   /// Appends a value pair to the form
   ///
-  /// :param: key the used form-data key
-  /// :param: value the appended value to the form
+  /// - parameter key: the used form-data key
+  /// - parameter value: the appended value to the form
   mutating public func appendFormData(key: String, value: String) {
     let content = "Content-Disposition: form-data; name=\"\(encode(key))\""
     let data = self.merge([
@@ -52,10 +52,10 @@ public struct MultipartDataBuilder {
 
   /// Appends a chunk of data as a file
   ///
-  /// :param: name the name of the field to post it as
-  /// :param: content the data chunk to embed in the form
-  /// :param: fileName file name of the file
-  /// :param: contentType MIME content type of the embedded file
+  /// - parameter name: the name of the field to post it as
+  /// - parameter content: the data chunk to embed in the form
+  /// - parameter fileName: file name of the file
+  /// - parameter contentType: MIME content type of the embedded file
   mutating public func appendFormData(name: String, content: NSData, fileName: String, contentType: String) {
     let contentDisposition = "Content-Disposition: form-data; name=\"\(encode(name))\"; filename=\"\(encode(fileName))\""
     let contentTypeHeader = "Content-Type: \(contentType)"
