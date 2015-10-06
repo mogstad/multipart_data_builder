@@ -1,0 +1,11 @@
+machine:
+  xcode:
+    version: "7.0"
+
+dependencies:
+  override:
+    - ./scripts/dependencies.sh
+
+test:
+  override:
+    - ./scripts/test.sh
