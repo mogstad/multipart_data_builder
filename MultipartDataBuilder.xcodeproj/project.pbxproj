@@ -22,6 +22,8 @@
 		2DD5B7DA1B1B805F00238EA1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DD5B7DC1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */; };
 		2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */; };
+		2DD616191BC41F4500B6FE9D /* LICENSE in Copy LICENSE */ = {isa = PBXBuildFile; fileRef = 2DD616161BC41F3500B6FE9D /* LICENSE */; };
+		2DD6161C1BC41F6000B6FE9D /* LICENSE in Copy LICENSE */ = {isa = PBXBuildFile; fileRef = 2DD616161BC41F3500B6FE9D /* LICENSE */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,28 @@
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DD616151BC41EEE00B6FE9D /* Copy LICENSE */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				2DD616191BC41F4500B6FE9D /* LICENSE in Copy LICENSE */,
+			);
+			name = "Copy LICENSE";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DD6161A1BC41F4A00B6FE9D /* Copy LICENSE */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				2DD6161C1BC41F6000B6FE9D /* LICENSE in Copy LICENSE */,
+			);
+			name = "Copy LICENSE";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +87,8 @@
 		2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartDataBuilder.swift; sourceTree = "<group>"; };
 		2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCharacterSet+MIME.swift"; sourceTree = "<group>"; };
 		2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+MultipartDataBuilder.swift"; sourceTree = "<group>"; };
+		2DD616161BC41F3500B6FE9D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		2DD616171BC41F3500B6FE9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +132,8 @@
 		2DD5B7831B1B7C9100238EA1 = {
 			isa = PBXGroup;
 			children = (
+				2DD616161BC41F3500B6FE9D /* LICENSE */,
+				2DD616171BC41F3500B6FE9D /* README.md */,
 				2D763D441BC3544700AD8CA9 /* Sources */,
 				2DD5B7DF1B1B847100238EA1 /* Tests */,
 				2DD5B7D41B1B7FDD00238EA1 /* Supporting Files */,
@@ -221,6 +249,7 @@
 				2DD5B7881B1B7C9100238EA1 /* Sources */,
 				2DD5B7891B1B7C9100238EA1 /* Frameworks */,
 				2DD5B78A1B1B7C9100238EA1 /* Headers */,
+				2DD616151BC41EEE00B6FE9D /* Copy LICENSE */,
 			);
 			buildRules = (
 			);
@@ -256,6 +285,7 @@
 				2DD5B7A91B1B7CB500238EA1 /* Sources */,
 				2DD5B7AA1B1B7CB500238EA1 /* Frameworks */,
 				2DD5B7AB1B1B7CB500238EA1 /* Headers */,
+				2DD6161A1BC41F4A00B6FE9D /* Copy LICENSE */,
 			);
 			buildRules = (
 			);
