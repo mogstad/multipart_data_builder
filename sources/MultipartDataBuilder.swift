@@ -57,7 +57,7 @@ public struct MultipartDataBuilder {
   /// - parameter fileName: file name of the file
   /// - parameter contentType: MIME content type of the embedded file
   mutating public func appendFormData(name: String, content: NSData, fileName: String, contentType: String) {
-    let contentDisposition = "Content-Disposition: form-data; name=\"\(encode(name))\"; filename=\"\(encode(fileName))\""
+    let contentDisposition = "Content-Disposition: form-data; name=\"\(self.encode(name))\"; filename=\"\(self.encode(fileName))\""
     let contentTypeHeader = "Content-Type: \(contentType)"
     let data = self.merge([
       self.toData(contentDisposition),

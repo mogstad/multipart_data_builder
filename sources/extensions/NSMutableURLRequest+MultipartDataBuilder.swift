@@ -8,7 +8,8 @@ public extension NSMutableURLRequest {
   /// - parameter boundary: the boundary used to build the form
   public func setMultipartBody(data: NSData, boundary: String) {
     self.HTTPBody = data
-    self.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+    self.setValue("multipart/form-data; boundary=\(boundary)",
+      forHTTPHeaderField: "Content-Type")
   }
 
 }

@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D763D451BC355E600AD8CA9 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7931B1B7C9100238EA1 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7991B1B7C9100238EA1 /* MultipartDataBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */; };
 		2DD5B7A01B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */; };
-		2DD5B7B31B1B7CB500238EA1 /* MultipartDataBuilder-OSX.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7B21B1B7CB500238EA1 /* MultipartDataBuilder-OSX.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7CA1B1B7D5E00238EA1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */; };
 		2DD5B7CB1B1B7D5E00238EA1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */; };
 		2DD5B7CF1B1B7DC600238EA1 /* MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */; };
@@ -18,9 +18,8 @@
 		2DD5B7D21B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D61B1B7FEB00238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
-		2DD5B7D81B1B805000238EA1 /* MultipartDataBuilder.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2DD5B7D91B1B805F00238EA1 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		2DD5B7DA1B1B805F00238EA1 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2DD5B7D91B1B805F00238EA1 /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2DD5B7DA1B1B805F00238EA1 /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DD5B7DC1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */; };
 		2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */; };
 /* End PBXBuildFile section */
@@ -36,33 +35,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2DD5B7D71B1B804700238EA1 /* CopyFiles */ = {
+		2DD5B7D71B1B804700238EA1 /* Copy Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2DD5B7D91B1B805F00238EA1 /* Nimble.framework in CopyFiles */,
-				2DD5B7DA1B1B805F00238EA1 /* Quick.framework in CopyFiles */,
-				2DD5B7D81B1B805000238EA1 /* MultipartDataBuilder.framework in CopyFiles */,
+				2DD5B7D91B1B805F00238EA1 /* Nimble.framework in Copy Frameworks */,
+				2DD5B7DA1B1B805F00238EA1 /* Quick.framework in Copy Frameworks */,
 			);
+			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultipartDataBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DD5B7911B1B7C9100238EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DD5B7911B1B7C9100238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipartDataBuilder.h; sourceTree = "<group>"; };
 		2DD5B7981B1B7C9100238EA1 /* MultipartDataBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipartDataBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DD5B79E1B1B7C9100238EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DD5B79E1B1B7C9100238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartDataBuilderSpec.swift; sourceTree = "<group>"; };
 		2DD5B7AE1B1B7CB500238EA1 /* MultipartDataBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultipartDataBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2DD5B7B11B1B7CB500238EA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DD5B7B21B1B7CB500238EA1 /* MultipartDataBuilder-OSX.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MultipartDataBuilder-OSX.h"; sourceTree = "<group>"; };
+		2DD5B7B11B1B7CB500238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
-		2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MultipartDataBuilder.swift; path = src/MultipartDataBuilder.swift; sourceTree = "<group>"; };
+		2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartDataBuilder.swift; sourceTree = "<group>"; };
 		2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCharacterSet+MIME.swift"; sourceTree = "<group>"; };
 		2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+MultipartDataBuilder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,15 +93,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D763D441BC3544700AD8CA9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2DD5B7DE1B1B846400238EA1 /* Extensions */,
+				2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */,
+			);
+			name = Sources;
+			path = sources;
+			sourceTree = "<group>";
+		};
 		2DD5B7831B1B7C9100238EA1 = {
 			isa = PBXGroup;
 			children = (
-				2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */,
-				2DD5B7DE1B1B846400238EA1 /* Extensions */,
-				2DD5B7DF1B1B847100238EA1 /* Specs */,
+				2D763D441BC3544700AD8CA9 /* Sources */,
+				2DD5B7DF1B1B847100238EA1 /* Tests */,
 				2DD5B7D41B1B7FDD00238EA1 /* Supporting Files */,
-				2DD5B78E1B1B7C9100238EA1 /* Products */,
 				2DD5B7C71B1B7CE700238EA1 /* Vendor */,
+				2DD5B78E1B1B7C9100238EA1 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -117,54 +124,31 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2DD5B78F1B1B7C9100238EA1 /* MultipartDataBuilder */ = {
+		2DD5B78F1B1B7C9100238EA1 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */,
-				2DD5B7901B1B7C9100238EA1 /* Supporting Files */,
+				2DD5B7911B1B7C9100238EA1 /* info.plist */,
 			);
-			path = MultipartDataBuilder;
+			name = iOS;
+			path = ios;
 			sourceTree = "<group>";
 		};
-		2DD5B7901B1B7C9100238EA1 /* Supporting Files */ = {
+		2DD5B79C1B1B7C9100238EA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				2DD5B7911B1B7C9100238EA1 /* Info.plist */,
+				2DD5B79E1B1B7C9100238EA1 /* info.plist */,
 			);
-			name = "Supporting Files";
+			name = Tests;
+			path = tests;
 			sourceTree = "<group>";
 		};
-		2DD5B79C1B1B7C9100238EA1 /* MultipartDataBuilderTests */ = {
+		2DD5B7AF1B1B7CB500238EA1 /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				2DD5B79D1B1B7C9100238EA1 /* Supporting Files */,
+				2DD5B7B11B1B7CB500238EA1 /* info.plist */,
 			);
-			path = MultipartDataBuilderTests;
-			sourceTree = "<group>";
-		};
-		2DD5B79D1B1B7C9100238EA1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2DD5B79E1B1B7C9100238EA1 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2DD5B7AF1B1B7CB500238EA1 /* MultipartDataBuilder-OSX */ = {
-			isa = PBXGroup;
-			children = (
-				2DD5B7B21B1B7CB500238EA1 /* MultipartDataBuilder-OSX.h */,
-				2DD5B7B01B1B7CB500238EA1 /* Supporting Files */,
-			);
-			path = "MultipartDataBuilder-OSX";
-			sourceTree = "<group>";
-		};
-		2DD5B7B01B1B7CB500238EA1 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				2DD5B7B11B1B7CB500238EA1 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Mac;
+			path = mac;
 			sourceTree = "<group>";
 		};
 		2DD5B7C71B1B7CE700238EA1 /* Vendor */ = {
@@ -180,9 +164,10 @@
 		2DD5B7D41B1B7FDD00238EA1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2DD5B78F1B1B7C9100238EA1 /* MultipartDataBuilder */,
-				2DD5B7AF1B1B7CB500238EA1 /* MultipartDataBuilder-OSX */,
-				2DD5B79C1B1B7C9100238EA1 /* MultipartDataBuilderTests */,
+				2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */,
+				2DD5B78F1B1B7C9100238EA1 /* iOS */,
+				2DD5B7AF1B1B7CB500238EA1 /* Mac */,
+				2DD5B79C1B1B7C9100238EA1 /* Tests */,
 			);
 			name = "Supporting Files";
 			path = supporting_files;
@@ -195,16 +180,16 @@
 				2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */,
 			);
 			name = Extensions;
-			path = src/extensions;
+			path = extensions;
 			sourceTree = "<group>";
 		};
-		2DD5B7DF1B1B847100238EA1 /* Specs */ = {
+		2DD5B7DF1B1B847100238EA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
 				2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */,
 			);
-			name = Specs;
-			path = specs;
+			name = Tests;
+			path = tests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,27 +207,26 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD5B7B31B1B7CB500238EA1 /* MultipartDataBuilder-OSX.h in Headers */,
+				2D763D451BC355E600AD8CA9 /* MultipartDataBuilder.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2DD5B78C1B1B7C9100238EA1 /* MultipartDataBuilder */ = {
+		2DD5B78C1B1B7C9100238EA1 /* MultipartDataBuilder-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DD5B7A31B1B7C9100238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder" */;
+			buildConfigurationList = 2DD5B7A31B1B7C9100238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder-iOS" */;
 			buildPhases = (
 				2DD5B7881B1B7C9100238EA1 /* Sources */,
 				2DD5B7891B1B7C9100238EA1 /* Frameworks */,
 				2DD5B78A1B1B7C9100238EA1 /* Headers */,
-				2DD5B78B1B1B7C9100238EA1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = MultipartDataBuilder;
+			name = "MultipartDataBuilder-iOS";
 			productName = MultipartDataBuilder;
 			productReference = 2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */;
 			productType = "com.apple.product-type.framework";
@@ -253,7 +237,7 @@
 			buildPhases = (
 				2DD5B7941B1B7C9100238EA1 /* Sources */,
 				2DD5B7951B1B7C9100238EA1 /* Frameworks */,
-				2DD5B7D71B1B804700238EA1 /* CopyFiles */,
+				2DD5B7D71B1B804700238EA1 /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,20 +249,19 @@
 			productReference = 2DD5B7981B1B7C9100238EA1 /* MultipartDataBuilderTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		2DD5B7AD1B1B7CB500238EA1 /* MultipartDataBuilder-OSX */ = {
+		2DD5B7AD1B1B7CB500238EA1 /* MultipartDataBuilder-Mac */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2DD5B7C11B1B7CB500238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder-OSX" */;
+			buildConfigurationList = 2DD5B7C11B1B7CB500238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder-Mac" */;
 			buildPhases = (
 				2DD5B7A91B1B7CB500238EA1 /* Sources */,
 				2DD5B7AA1B1B7CB500238EA1 /* Frameworks */,
 				2DD5B7AB1B1B7CB500238EA1 /* Headers */,
-				2DD5B7AC1B1B7CB500238EA1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "MultipartDataBuilder-OSX";
+			name = "MultipartDataBuilder-Mac";
 			productName = "MultipartDataBuilder-OSX";
 			productReference = 2DD5B7AE1B1B7CB500238EA1 /* MultipartDataBuilder.framework */;
 			productType = "com.apple.product-type.framework";
@@ -291,7 +274,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Flow;
 				TargetAttributes = {
 					2DD5B78C1B1B7C9100238EA1 = {
@@ -317,29 +300,12 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2DD5B78C1B1B7C9100238EA1 /* MultipartDataBuilder */,
-				2DD5B7AD1B1B7CB500238EA1 /* MultipartDataBuilder-OSX */,
+				2DD5B78C1B1B7C9100238EA1 /* MultipartDataBuilder-iOS */,
+				2DD5B7AD1B1B7CB500238EA1 /* MultipartDataBuilder-Mac */,
 				2DD5B7971B1B7C9100238EA1 /* MultipartDataBuilderTests */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		2DD5B78B1B1B7C9100238EA1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2DD5B7AC1B1B7CB500238EA1 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2DD5B7881B1B7C9100238EA1 /* Sources */ = {
@@ -376,7 +342,7 @@
 /* Begin PBXTargetDependency section */
 		2DD5B79B1B1B7C9100238EA1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2DD5B78C1B1B7C9100238EA1 /* MultipartDataBuilder */;
+			target = 2DD5B78C1B1B7C9100238EA1 /* MultipartDataBuilder-iOS */;
 			targetProxy = 2DD5B79A1B1B7C9100238EA1 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -404,6 +370,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -479,11 +446,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/MultipartDataBuilder/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/iOS/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -497,11 +465,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/MultipartDataBuilder/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/iOS/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -510,16 +479,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					/Users/mogstad/Projects/mogstad/multipart_data_builder/Carthage/Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = supporting_files/MultipartDataBuilderTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/Tests/info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -528,12 +497,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					/Users/mogstad/Projects/mogstad/multipart_data_builder/Carthage/Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = supporting_files/MultipartDataBuilderTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/Tests/info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -553,10 +522,11 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/MultipartDataBuilder-OSX/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/Mac/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -574,10 +544,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/MultipartDataBuilder-OSX/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/Mac/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
@@ -596,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2DD5B7A31B1B7C9100238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder" */ = {
+		2DD5B7A31B1B7C9100238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2DD5B7A41B1B7C9100238EA1 /* Debug */,
@@ -614,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2DD5B7C11B1B7CB500238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder-OSX" */ = {
+		2DD5B7C11B1B7CB500238EA1 /* Build configuration list for PBXNativeTarget "MultipartDataBuilder-Mac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2DD5B7C21B1B7CB500238EA1 /* Debug */,

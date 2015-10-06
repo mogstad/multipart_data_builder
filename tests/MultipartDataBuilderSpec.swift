@@ -1,7 +1,7 @@
 import Foundation
 import Quick
 import Nimble
-import MultipartDataBuilder
+@testable import MultipartDataBuilder
 
 class MultipartDataBuilderSpec: QuickSpec {
 
