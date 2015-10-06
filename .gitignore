@@ -1,5 +1,4 @@
 # Xcode
-#
 build/
 *.pbxuser
 !default.pbxuser
@@ -10,12 +9,16 @@ build/
 *.perspectivev3
 !default.perspectivev3
 xcuserdata
-*.xccheckout
 *.moved-aside
 DerivedData
 *.hmap
 *.ipa
+*.xcarchive
 *.xcuserstate
+*.xccheckout
+*.xcscmblueprint
 
+# Carthage
 Carthage/Checkouts
 Carthage/Build
+*.framework.zip
