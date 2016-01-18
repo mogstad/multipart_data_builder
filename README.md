@@ -40,7 +40,7 @@ request.setMultipartBody(builder.build(), boundary: builder.boundary)
 
 ### [Carthage](https://github.com/carthage/carthage)
 
-1. Add `github "mogstad/multiform_data_builder" ~> 2.0` to your “Cartfile”
+1. Add `github "mogstad/multipart_data_builder" ~> 2.0` to your “Cartfile”
 2. Run `carthage update`
 3. Link MultipartDataBuilder with your target
 4. Create a new “Copy files” build phases, set ”Destination” to ”Frameworks”, add MultipartDataBuilder
