@@ -1,7 +1,7 @@
 # Multipart Data Builder
 
 [![Build Status](https://img.shields.io/circleci/project/mogstad/multipart_data_builder.svg?style=flat-square)](https://circleci.com/gh/mogstad/multipart_data_builder)
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/MultipartDataBuilder.svg?style=flat-square)](https://cocoapods.org/pods/MultipartDataBuilder)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/MultipartDataBuilder.svg?style=flat-square)](https://cocoapods.org/pods/MultipartDataBuilder)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
 MultipartDataBuilder is a micro framework for creating multipart data forms, used for uploading files over HTTP.
