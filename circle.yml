@@ -1,11 +1,11 @@
 machine:
   xcode:
-    version: "7.0"
+    version: "7.2"
 
 dependencies:
   override:
-    - ./scripts/dependencies.sh
+    - carthage bootstrap --use-ssh --platform ios
 
 test:
   override:
-    - ./scripts/test.sh
+    - scan -s iOS -p MultipartDataBuilder.xcodeproj
