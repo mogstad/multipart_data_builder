@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1EAFCF1BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */; };
+		2D1EAFD01BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */; };
+		2D1EAFD21BEFC50D006AA9A0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */; };
+		2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */; };
+		2D2395D01CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */; };
+		2D2395D11CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */; };
 		2D763D451BC355E600AD8CA9 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7931B1B7C9100238EA1 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7991B1B7C9100238EA1 /* MultipartDataBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */; };
 		2DD5B7A01B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */; };
 		2DD5B7CA1B1B7D5E00238EA1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */; };
 		2DD5B7CB1B1B7D5E00238EA1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */; };
-		2DD5B7CF1B1B7DC600238EA1 /* MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */; };
-		2DD5B7D01B1B7DC600238EA1 /* MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */; };
+		2DD5B7CF1B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */; };
+		2DD5B7D01B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */; };
 		2DD5B7D21B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D61B1B7FEB00238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
@@ -24,6 +30,8 @@
 		2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */; };
 		2DD616191BC41F4500B6FE9D /* LICENSE in Copy LICENSE */ = {isa = PBXBuildFile; fileRef = 2DD616161BC41F3500B6FE9D /* LICENSE */; };
 		2DD6161C1BC41F6000B6FE9D /* LICENSE in Copy LICENSE */ = {isa = PBXBuildFile; fileRef = 2DD616161BC41F3500B6FE9D /* LICENSE */; };
+		2DF25AB91CB7CB4C0086EB8E /* walter.png in Copy Fixtures */ = {isa = PBXBuildFile; fileRef = 2DF25AB71CB7CB310086EB8E /* walter.png */; };
+		2DF25ABB1CB804AF0086EB8E /* text.txt in Copy Fixtures */ = {isa = PBXBuildFile; fileRef = 2DF25ABA1CB803940086EB8E /* text.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +79,24 @@
 			name = "Copy LICENSE";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DF25AB81CB7CB450086EB8E /* Copy Fixtures */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				2DF25ABB1CB804AF0086EB8E /* text.txt in Copy Fixtures */,
+				2DF25AB91CB7CB4C0086EB8E /* walter.png in Copy Fixtures */,
+			);
+			name = "Copy Fixtures";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_chunk.swift; sourceTree = "<group>"; };
+		2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
+		2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_input_stream.swift; sourceTree = "<group>"; };
 		2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultipartDataBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD5B7911B1B7C9100238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipartDataBuilder.h; sourceTree = "<group>"; };
@@ -84,11 +107,13 @@
 		2DD5B7B11B1B7CB500238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
-		2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartDataBuilder.swift; sourceTree = "<group>"; };
+		2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_builder.swift; sourceTree = "<group>"; };
 		2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCharacterSet+MIME.swift"; sourceTree = "<group>"; };
 		2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+MultipartDataBuilder.swift"; sourceTree = "<group>"; };
 		2DD616161BC41F3500B6FE9D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2DD616171BC41F3500B6FE9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2DF25AB71CB7CB310086EB8E /* walter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walter.png; sourceTree = "<group>"; };
+		2DF25ABA1CB803940086EB8E /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +148,10 @@
 			isa = PBXGroup;
 			children = (
 				2DD5B7DE1B1B846400238EA1 /* Extensions */,
-				2DD5B7CE1B1B7DC600238EA1 /* MultipartDataBuilder.swift */,
+				2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */,
+				2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */,
+				2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */,
+				2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */,
 			);
 			name = Sources;
 			path = sources;
@@ -214,10 +242,21 @@
 		2DD5B7DF1B1B847100238EA1 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				2DF25AB61CB7CAF40086EB8E /* Fixtures */,
 				2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */,
 			);
 			name = Tests;
 			path = tests;
+			sourceTree = "<group>";
+		};
+		2DF25AB61CB7CAF40086EB8E /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				2DF25AB71CB7CB310086EB8E /* walter.png */,
+				2DF25ABA1CB803940086EB8E /* text.txt */,
+			);
+			name = Fixtures;
+			path = fixtures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +306,7 @@
 				2DD5B7941B1B7C9100238EA1 /* Sources */,
 				2DD5B7951B1B7C9100238EA1 /* Frameworks */,
 				2DD5B7D71B1B804700238EA1 /* Copy Frameworks */,
+				2DF25AB81CB7CB450086EB8E /* Copy Fixtures */,
 			);
 			buildRules = (
 			);
@@ -342,9 +382,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD5B7CF1B1B7DC600238EA1 /* MultipartDataBuilder.swift in Sources */,
+				2D1EAFCF1BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */,
+				2D1EAFD21BEFC50D006AA9A0 /* utilities.swift in Sources */,
+				2DD5B7CF1B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */,
 				2DD5B7DC1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
 				2DD5B7D21B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */,
+				2D2395D01CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,9 +404,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD5B7D01B1B7DC600238EA1 /* MultipartDataBuilder.swift in Sources */,
+				2D1EAFD01BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */,
+				2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */,
+				2DD5B7D01B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */,
 				2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
 				2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */,
+				2D2395D11CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,7 +564,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/Tests/info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getflow.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -532,7 +578,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/Tests/info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.getflow.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

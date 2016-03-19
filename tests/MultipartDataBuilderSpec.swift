@@ -3,6 +3,15 @@ import Quick
 import Nimble
 @testable import MultipartDataBuilder
 
+func loadFile(path: String) -> String {
+  return try! NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
+}
+
+func loadFixture(name: String, ofType type: String) -> NSData {
+  let bundle = NSBundle(identifier: "com.getflow.tests")
+  return NSData(contentsOfFile: bundle!.pathForResource(name, ofType: type)!)!
+}
+
 class MultipartDataBuilderSpec: QuickSpec {
 
   override func spec() {
@@ -19,7 +28,12 @@ class MultipartDataBuilderSpec: QuickSpec {
         "Walter White\r\n" +
       "--\(builder.boundary)--\r\n"
 
-      expect(builder.build()).to(equal(wanted.dataUsingEncoding(NSUTF8StringEncoding)!))
+      waitUntil(action: { done in
+        builder.build({ stream, filePath in
+          expect(loadFile(filePath)).to(equal(wanted))
+          done()
+        })
+      })
     }
 
     it("serializes multiple form fields") {
@@ -34,8 +48,64 @@ class MultipartDataBuilderSpec: QuickSpec {
         "kill\r\n" +
       "--\(builder.boundary)--\r\n"
 
-      expect(builder.build()).to(equal(wanted.dataUsingEncoding(NSUTF8StringEncoding)!))
+      waitUntil(action: { done in
+        builder.build({ stream, filePath in
+          expect(loadFile(filePath)).to(equal(wanted))
+          done()
+        })
+      })
+    }
 
+    describe("raw data") {
+      beforeEach {
+        builder.appendFormData("file",
+          content: loadFixture("text", ofType: "txt"),
+          fileName: "text.txt",
+          contentType: "plain/text")
+      }
+
+      fit("works") {
+        let wanted = "--\(builder.boundary)\r\n" +
+          "Content-Disposition: form-data; name=\"file\"; filename=\"text.txt\"\r\n" +
+          "Content-Type: plain/text\r\n\r\n" +
+          "Lorem ipsum\n\r\n" +
+          "--\(builder.boundary)--\r\n"
+
+        waitUntil(action: { done in
+          builder.build({ stream, filePath in
+            expect(loadFile(filePath)).to(equal(wanted))
+            done()
+          })
+        })
+      }
+    }
+
+    describe("streams of data") {
+
+      beforeEach {
+        let bundle = NSBundle(identifier: "com.getflow.tests")!
+        let path = bundle.pathForResource("text", ofType: "txt")!
+        let stream = NSInputStream(fileAtPath: path)!
+        builder.appendFormData("file",
+          stream: stream,
+          fileName: "text.txt",
+          contentType: "plain/text")
+      }
+
+      fit("works") {
+        let wanted = "--\(builder.boundary)\r\n" +
+          "Content-Disposition: form-data; name=\"file\"; filename=\"text.txt\"\r\n" +
+          "Content-Type: plain/text\r\n\r\n" +
+          "Lorem ipsum\n\r\n" +
+          "--\(builder.boundary)--\r\n"
+
+        waitUntil(action: { done in
+          builder.build({ stream, filePath in
+            expect(loadFile(filePath)).to(equal(wanted))
+            done()
+          })
+        })
+      }
     }
 
   }
