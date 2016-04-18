@@ -6,7 +6,7 @@ import Foundation
 public struct MultipartDataBuilder {
 
   public let boundary: String
-  private var chunks: [MultipartDataChunk] = []
+  private var fields: [MultipartField] = []
 
   public init() {
     self.boundary = "com.getflow.multipart-data-builder.\(arc4random()).\(arc4random())"
@@ -21,30 +21,33 @@ public struct MultipartDataBuilder {
       if let builder = MultipartInputStream(
         filePath: filePath,
         boundary: self.boundary,
-        chunks: self.chunks)
+        fields: self.fields)
       {
-        do {
-          try builder.write()
-          dispatch_async(dispatch_get_main_queue()) {
-            if let stream = NSInputStream(fileAtPath: filePath) {
-              callback(stream: stream, filePath: filePath)
+          builder.write() { error in
+            if let _ = error {
+              let _ = try? NSFileManager.defaultManager().removeItemAtPath(filePath)
+            } else {
+              dispatch_async(dispatch_get_main_queue()) {
+                if let stream = NSInputStream(fileAtPath: filePath) {
+                  callback(stream: stream, filePath: filePath)
+                }
+              }
             }
           }
-        } catch {
-          debugPrint("failed: \(error)")
-          let _ = try? NSFileManager.defaultManager().removeItemAtPath(filePath)
-        }
       }
     }
+  }
 
+  mutating public func appendField(field: MultipartField) {
+    self.fields.append(field)
   }
 
   /// Appends a value pair to the form
   ///
-  /// - parameter key: the used form-data key
+  /// - parameter name: the used form-data key
   /// - parameter value: the appended value to the form
-  mutating public func appendFormData(key: String, value: String) {
-    self.chunks.append(.Field(key: key, value: value))
+  mutating public func appendFormData(name: String, value: String) {
+    self.fields.append(MultipartStaticField(name: name, value: value))
   }
 
   /// Appends a stream of data as a file
@@ -54,12 +57,11 @@ public struct MultipartDataBuilder {
   /// - parameter fileName: file name of the file
   /// - parameter contentType: MIME content type of the embedded file
   mutating public func appendFormData(name: String, stream: NSInputStream, fileName: String, contentType: String) {
-
-    self.chunks.append(.Stream(
+    self.fields.append(MultipartStreamField(
       name: name,
-      content: stream,
       fileName: fileName,
-      contentType: contentType))
+      contentType: contentType,
+      content: stream))
   }
 
   /// Appends a chunk of data as a file
@@ -69,11 +71,11 @@ public struct MultipartDataBuilder {
   /// - parameter fileName: file name of the file
   /// - parameter contentType: MIME content type of the embedded file
   mutating public func appendFormData(name: String, content: NSData, fileName: String, contentType: String) {
-    self.chunks.append(.Data(
+    self.fields.append(MultipartStreamField(
       name: name,
-      content: content,
       fileName: fileName,
-      contentType: contentType))
+      contentType: contentType,
+      content: NSInputStream(data: content)))
   }
 
 }

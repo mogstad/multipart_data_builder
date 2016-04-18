@@ -9,8 +9,9 @@ Pod::Spec.new do |spec|
     :git => "https://github.com/mogstad/multipart_data_builder.git", 
     :branch => "streams"
   }
-  spec.ios.deployment_target = "8.0"
+  spec.module_map = "supporting_files/module.map"
+  spec.ios.deployment_target = "9.0"
   spec.osx.deployment_target = "10.10"
-  spec.source_files = "sources/**/*.swift"
+  spec.source_files = ["sources/**/*.swift", "supporting_files/MultipartDataBuilder.h"]
   spec.requires_arc = true
 end

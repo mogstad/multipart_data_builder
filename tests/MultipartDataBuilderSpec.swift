@@ -1,7 +1,7 @@
 import Foundation
 import Quick
 import Nimble
-@testable import MultipartDataBuilder
+import MultipartDataBuilder
 
 func loadFile(path: String) -> String {
   return try! NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
@@ -9,8 +9,10 @@ func loadFile(path: String) -> String {
 
 func loadFixture(name: String, ofType type: String) -> NSData {
   let bundle = NSBundle(identifier: "com.getflow.tests")
+  print(bundle?.bundlePath)
   return NSData(contentsOfFile: bundle!.pathForResource(name, ofType: type)!)!
 }
+
 
 class MultipartDataBuilderSpec: QuickSpec {
 
@@ -46,7 +48,7 @@ class MultipartDataBuilderSpec: QuickSpec {
         "--\(builder.boundary)\r\n" +
         "Content-Disposition: form-data; name=\"action\"\r\n\r\n" +
         "kill\r\n" +
-      "--\(builder.boundary)--\r\n"
+        "--\(builder.boundary)--\r\n"
 
       waitUntil(action: { done in
         builder.build({ stream, filePath in
@@ -64,7 +66,7 @@ class MultipartDataBuilderSpec: QuickSpec {
           contentType: "plain/text")
       }
 
-      fit("works") {
+      it("works") {
         let wanted = "--\(builder.boundary)\r\n" +
           "Content-Disposition: form-data; name=\"file\"; filename=\"text.txt\"\r\n" +
           "Content-Type: plain/text\r\n\r\n" +
@@ -92,7 +94,7 @@ class MultipartDataBuilderSpec: QuickSpec {
           contentType: "plain/text")
       }
 
-      fit("works") {
+      it("works") {
         let wanted = "--\(builder.boundary)\r\n" +
           "Content-Disposition: form-data; name=\"file\"; filename=\"text.txt\"\r\n" +
           "Content-Type: plain/text\r\n\r\n" +

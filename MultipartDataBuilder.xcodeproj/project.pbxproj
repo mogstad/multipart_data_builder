@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2D1EAFCF1BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */; };
-		2D1EAFD01BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */; };
 		2D1EAFD21BEFC50D006AA9A0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */; };
 		2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */; };
 		2D2395D01CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */; };
 		2D2395D11CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */; };
 		2D763D451BC355E600AD8CA9 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2D84CC741CBD2C2900E6EC4A /* input_stream_hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */; };
+		2DA112961CC29D8900B5D1C4 /* read_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA112951CC29D8900B5D1C4 /* read_stream.swift */; };
+		2DA112991CC3B84D00B5D1C4 /* input_stream_hash_spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA112971CC3B77000B5D1C4 /* input_stream_hash_spec.swift */; };
+		2DBAA74E1CC0E666007F02FB /* multipart_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA74D1CC0E666007F02FB /* multipart_field.swift */; };
+		2DBAA7501CC0E747007F02FB /* multipart_static_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA74F1CC0E747007F02FB /* multipart_static_field.swift */; };
+		2DBAA7521CC0E771007F02FB /* multipart_asset_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7511CC0E771007F02FB /* multipart_asset_field.swift */; };
+		2DBAA7541CC0E86C007F02FB /* chunk_datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7531CC0E86C007F02FB /* chunk_datasource.swift */; };
+		2DBAA7561CC0EF52007F02FB /* multipart_data_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7551CC0EF52007F02FB /* multipart_data_field.swift */; };
+		2DBAA7581CC0F02C007F02FB /* multipart_stream_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7571CC0F02C007F02FB /* multipart_stream_field.swift */; };
 		2DD5B7931B1B7C9100238EA1 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7991B1B7C9100238EA1 /* MultipartDataBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */; };
 		2DD5B7A01B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */; };
@@ -30,6 +37,9 @@
 		2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */; };
 		2DD616191BC41F4500B6FE9D /* LICENSE in Copy LICENSE */ = {isa = PBXBuildFile; fileRef = 2DD616161BC41F3500B6FE9D /* LICENSE */; };
 		2DD6161C1BC41F6000B6FE9D /* LICENSE in Copy LICENSE */ = {isa = PBXBuildFile; fileRef = 2DD616161BC41F3500B6FE9D /* LICENSE */; };
+		2DE906301CBFBA92003008A6 /* asset_data_source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE9062F1CBFBA92003008A6 /* asset_data_source.swift */; };
+		2DE906321CBFBEBC003008A6 /* stream_data_source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE906311CBFBEBC003008A6 /* stream_data_source.swift */; };
+		2DE906341CBFCD08003008A6 /* write_output_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE906331CBFCD08003008A6 /* write_output_stream.swift */; };
 		2DF25AB91CB7CB4C0086EB8E /* walter.png in Copy Fixtures */ = {isa = PBXBuildFile; fileRef = 2DF25AB71CB7CB310086EB8E /* walter.png */; };
 		2DF25ABB1CB804AF0086EB8E /* text.txt in Copy Fixtures */ = {isa = PBXBuildFile; fileRef = 2DF25ABA1CB803940086EB8E /* text.txt */; };
 /* End PBXBuildFile section */
@@ -94,9 +104,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_chunk.swift; sourceTree = "<group>"; };
 		2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_input_stream.swift; sourceTree = "<group>"; };
+		2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input_stream_hash.swift; sourceTree = "<group>"; };
+		2D84CC771CBD3F7C00E6EC4A /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.map; path = supporting_files/module.map; sourceTree = "<group>"; };
+		2DA112951CC29D8900B5D1C4 /* read_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = read_stream.swift; path = utilities/read_stream.swift; sourceTree = "<group>"; };
+		2DA112971CC3B77000B5D1C4 /* input_stream_hash_spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input_stream_hash_spec.swift; sourceTree = "<group>"; };
+		2DBAA74D1CC0E666007F02FB /* multipart_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_field.swift; sourceTree = "<group>"; };
+		2DBAA74F1CC0E747007F02FB /* multipart_static_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_static_field.swift; sourceTree = "<group>"; };
+		2DBAA7511CC0E771007F02FB /* multipart_asset_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_asset_field.swift; sourceTree = "<group>"; };
+		2DBAA7531CC0E86C007F02FB /* chunk_datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chunk_datasource.swift; sourceTree = "<group>"; };
+		2DBAA7551CC0EF52007F02FB /* multipart_data_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_field.swift; sourceTree = "<group>"; };
+		2DBAA7571CC0F02C007F02FB /* multipart_stream_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_stream_field.swift; sourceTree = "<group>"; };
 		2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultipartDataBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD5B7911B1B7C9100238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipartDataBuilder.h; sourceTree = "<group>"; };
@@ -112,6 +131,9 @@
 		2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+MultipartDataBuilder.swift"; sourceTree = "<group>"; };
 		2DD616161BC41F3500B6FE9D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		2DD616171BC41F3500B6FE9D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2DE9062F1CBFBA92003008A6 /* asset_data_source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = asset_data_source.swift; sourceTree = "<group>"; };
+		2DE906311CBFBEBC003008A6 /* stream_data_source.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = stream_data_source.swift; sourceTree = "<group>"; };
+		2DE906331CBFCD08003008A6 /* write_output_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = write_output_stream.swift; path = sources/write_output_stream.swift; sourceTree = SOURCE_ROOT; };
 		2DF25AB71CB7CB310086EB8E /* walter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = walter.png; sourceTree = "<group>"; };
 		2DF25ABA1CB803940086EB8E /* text.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = text.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,19 +169,63 @@
 		2D763D441BC3544700AD8CA9 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				2DA112941CC29C6400B5D1C4 /* Data Sources */,
+				2DA112931CC29B3900B5D1C4 /* Utilities */,
+				2DA112921CC29ADD00B5D1C4 /* Fields */,
+				2DBAA74C1CC0E63B007F02FB /* Protocols */,
 				2DD5B7DE1B1B846400238EA1 /* Extensions */,
 				2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */,
-				2D1EAFCE1BEF9810006AA9A0 /* multipart_data_chunk.swift */,
 				2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */,
-				2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */,
+				2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */,
 			);
 			name = Sources;
 			path = sources;
 			sourceTree = "<group>";
 		};
+		2DA112921CC29ADD00B5D1C4 /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				2DBAA74F1CC0E747007F02FB /* multipart_static_field.swift */,
+				2DBAA7511CC0E771007F02FB /* multipart_asset_field.swift */,
+				2DBAA7551CC0EF52007F02FB /* multipart_data_field.swift */,
+				2DBAA7571CC0F02C007F02FB /* multipart_stream_field.swift */,
+			);
+			name = Fields;
+			sourceTree = "<group>";
+		};
+		2DA112931CC29B3900B5D1C4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */,
+				2DE906331CBFCD08003008A6 /* write_output_stream.swift */,
+				2DA112951CC29D8900B5D1C4 /* read_stream.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		2DA112941CC29C6400B5D1C4 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2DE9062F1CBFBA92003008A6 /* asset_data_source.swift */,
+				2DE906311CBFBEBC003008A6 /* stream_data_source.swift */,
+			);
+			name = "Data Sources";
+			sourceTree = "<group>";
+		};
+		2DBAA74C1CC0E63B007F02FB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2DBAA74D1CC0E666007F02FB /* multipart_field.swift */,
+				2DBAA7531CC0E86C007F02FB /* chunk_datasource.swift */,
+			);
+			name = Protocols;
+			path = protocols;
+			sourceTree = "<group>";
+		};
 		2DD5B7831B1B7C9100238EA1 = {
 			isa = PBXGroup;
 			children = (
+				2D84CC771CBD3F7C00E6EC4A /* module.map */,
 				2DD616161BC41F3500B6FE9D /* LICENSE */,
 				2DD616171BC41F3500B6FE9D /* README.md */,
 				2D763D441BC3544700AD8CA9 /* Sources */,
@@ -244,6 +310,7 @@
 			children = (
 				2DF25AB61CB7CAF40086EB8E /* Fixtures */,
 				2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */,
+				2DA112971CC3B77000B5D1C4 /* input_stream_hash_spec.swift */,
 			);
 			name = Tests;
 			path = tests;
@@ -382,12 +449,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D1EAFCF1BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */,
+				2DBAA7541CC0E86C007F02FB /* chunk_datasource.swift in Sources */,
+				2DE906341CBFCD08003008A6 /* write_output_stream.swift in Sources */,
+				2D84CC741CBD2C2900E6EC4A /* input_stream_hash.swift in Sources */,
+				2DBAA7521CC0E771007F02FB /* multipart_asset_field.swift in Sources */,
 				2D1EAFD21BEFC50D006AA9A0 /* utilities.swift in Sources */,
+				2DA112961CC29D8900B5D1C4 /* read_stream.swift in Sources */,
+				2DE906301CBFBA92003008A6 /* asset_data_source.swift in Sources */,
+				2DBAA7581CC0F02C007F02FB /* multipart_stream_field.swift in Sources */,
+				2DE906321CBFBEBC003008A6 /* stream_data_source.swift in Sources */,
 				2DD5B7CF1B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */,
+				2DBAA7501CC0E747007F02FB /* multipart_static_field.swift in Sources */,
 				2DD5B7DC1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
+				2DBAA7561CC0EF52007F02FB /* multipart_data_field.swift in Sources */,
 				2DD5B7D21B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */,
 				2D2395D01CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */,
+				2DBAA74E1CC0E666007F02FB /* multipart_field.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2DD5B7A01B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift in Sources */,
+				2DA112991CC3B84D00B5D1C4 /* input_stream_hash_spec.swift in Sources */,
 				2DD5B7D61B1B7FEB00238EA1 /* NSCharacterSet+MIME.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +482,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D1EAFD01BEF9810006AA9A0 /* multipart_data_chunk.swift in Sources */,
 				2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */,
 				2DD5B7D01B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */,
 				2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
@@ -462,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -504,7 +581,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -524,8 +601,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/iOS/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.map";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
@@ -543,8 +621,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/iOS/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.map";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
