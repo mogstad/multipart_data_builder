@@ -39,6 +39,7 @@ class AssetDataSource: ChunkDataSource {
       dataReceivedHandler: { data in
         do {
           try self.writeData(data, outputStream: outputStream)
+          try self.writeData(MutlipartFormCRLFData, outputStream: outputStream)
         } catch {
           completeHandler(error)
         }
