@@ -1,9 +1,9 @@
 import Foundation
 
-/// MultipartDataBuilder builds a multipart form (RFC2388) form both key value
+/// MultipartDataForm builds a multipart form (RFC2388) form both key value
 /// pairs and chunks of data as embedded files.
 
-public struct MultipartDataBuilder {
+public struct MultipartDataForm {
 
   public let boundary: String
   private var fields: [MultipartField] = []
@@ -18,7 +18,7 @@ public struct MultipartDataBuilder {
   public func build(callback: (stream: NSInputStream, filePath: String) -> Void) {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
       let filePath = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent(NSUUID().UUIDString)
-      if let builder = MultipartInputStream(
+      if let builder = MultipartFormBuilder(
         filePath: filePath,
         boundary: self.boundary,
         fields: self.fields)

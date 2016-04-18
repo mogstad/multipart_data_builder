@@ -14,13 +14,13 @@ func loadFixture(name: String, ofType type: String) -> NSData {
 }
 
 
-class MultipartDataBuilderSpec: QuickSpec {
+class MultipartDataFormSpec: QuickSpec {
 
   override func spec() {
 
-    var builder: MultipartDataBuilder!
+    var builder: MultipartDataForm!
     beforeEach {
-      builder = MultipartDataBuilder()
+      builder = MultipartDataForm()
     }
 
     it("serializes form field") {

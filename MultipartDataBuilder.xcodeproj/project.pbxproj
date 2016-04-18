@@ -26,8 +26,8 @@
 		2DD5B7A01B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */; };
 		2DD5B7CA1B1B7D5E00238EA1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */; };
 		2DD5B7CB1B1B7D5E00238EA1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */; };
-		2DD5B7CF1B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */; };
-		2DD5B7D01B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */; };
+		2DD5B7CF1B1B7DC600238EA1 /* multipart_data_form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */; };
+		2DD5B7D01B1B7DC600238EA1 /* multipart_data_form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */; };
 		2DD5B7D21B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D61B1B7FEB00238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
@@ -126,7 +126,7 @@
 		2DD5B7B11B1B7CB500238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
-		2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_builder.swift; sourceTree = "<group>"; };
+		2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_form.swift; sourceTree = "<group>"; };
 		2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCharacterSet+MIME.swift"; sourceTree = "<group>"; };
 		2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+MultipartDataBuilder.swift"; sourceTree = "<group>"; };
 		2DD616161BC41F3500B6FE9D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 				2DA112921CC29ADD00B5D1C4 /* Fields */,
 				2DBAA74C1CC0E63B007F02FB /* Protocols */,
 				2DD5B7DE1B1B846400238EA1 /* Extensions */,
-				2DD5B7CE1B1B7DC600238EA1 /* multipart_data_builder.swift */,
+				2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */,
 				2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */,
 				2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */,
 			);
@@ -458,7 +458,7 @@
 				2DE906301CBFBA92003008A6 /* asset_data_source.swift in Sources */,
 				2DBAA7581CC0F02C007F02FB /* multipart_stream_field.swift in Sources */,
 				2DE906321CBFBEBC003008A6 /* stream_data_source.swift in Sources */,
-				2DD5B7CF1B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */,
+				2DD5B7CF1B1B7DC600238EA1 /* multipart_data_form.swift in Sources */,
 				2DBAA7501CC0E747007F02FB /* multipart_static_field.swift in Sources */,
 				2DD5B7DC1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
 				2DBAA7561CC0EF52007F02FB /* multipart_data_field.swift in Sources */,
@@ -483,7 +483,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */,
-				2DD5B7D01B1B7DC600238EA1 /* multipart_data_builder.swift in Sources */,
+				2DD5B7D01B1B7DC600238EA1 /* multipart_data_form.swift in Sources */,
 				2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
 				2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */,
 				2D2395D11CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */,

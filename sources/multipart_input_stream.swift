@@ -7,7 +7,7 @@ enum StreamError: ErrorType {
   case OutputStreamWriteFailed
 }
 
-struct MultipartInputStream {
+struct MultipartFormBuilder {
 
   let fields: [MultipartField]
   let output: NSOutputStream
