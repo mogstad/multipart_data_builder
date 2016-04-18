@@ -1,9 +1,9 @@
 import Foundation
 
-/// MultipartDataForm builds a multipart form (RFC2388) form both key value
+/// MultipartForm builds a multipart form (RFC2388) form both key value
 /// pairs and chunks of data as embedded files.
 
-public struct MultipartDataForm {
+public struct MultipartForm {
 
   public let boundary: String
   private var fields: [MultipartField] = []

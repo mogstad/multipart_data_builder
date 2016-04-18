@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D1EAFD21BEFC50D006AA9A0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */; };
 		2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */; };
-		2D2395D01CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */; };
-		2D2395D11CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */; };
+		2D2395D01CA0A80E003C2A65 /* multipart_form_builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_form_builder.swift */; };
+		2D2395D11CA0A80E003C2A65 /* multipart_form_builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D2395CF1CA0A80E003C2A65 /* multipart_form_builder.swift */; };
 		2D763D451BC355E600AD8CA9 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2D84CC741CBD2C2900E6EC4A /* input_stream_hash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */; };
 		2DA112961CC29D8900B5D1C4 /* read_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA112951CC29D8900B5D1C4 /* read_stream.swift */; };
@@ -23,11 +23,11 @@
 		2DBAA7581CC0F02C007F02FB /* multipart_stream_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7571CC0F02C007F02FB /* multipart_stream_field.swift */; };
 		2DD5B7931B1B7C9100238EA1 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7991B1B7C9100238EA1 /* MultipartDataBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */; };
-		2DD5B7A01B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */; };
+		2DD5B7A01B1B7C9100238EA1 /* multipart_form_spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B79F1B1B7C9100238EA1 /* multipart_form_spec.swift */; };
 		2DD5B7CA1B1B7D5E00238EA1 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */; };
 		2DD5B7CB1B1B7D5E00238EA1 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */; };
-		2DD5B7CF1B1B7DC600238EA1 /* multipart_data_form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */; };
-		2DD5B7D01B1B7DC600238EA1 /* multipart_data_form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */; };
+		2DD5B7CF1B1B7DC600238EA1 /* multipart_form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_form.swift */; };
+		2DD5B7D01B1B7DC600238EA1 /* multipart_form.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7CE1B1B7DC600238EA1 /* multipart_form.swift */; };
 		2DD5B7D21B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
 		2DD5B7D61B1B7FEB00238EA1 /* NSCharacterSet+MIME.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */; };
@@ -105,7 +105,7 @@
 
 /* Begin PBXFileReference section */
 		2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
-		2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_input_stream.swift; sourceTree = "<group>"; };
+		2D2395CF1CA0A80E003C2A65 /* multipart_form_builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_form_builder.swift; sourceTree = "<group>"; };
 		2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input_stream_hash.swift; sourceTree = "<group>"; };
 		2D84CC771CBD3F7C00E6EC4A /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.map; path = supporting_files/module.map; sourceTree = "<group>"; };
 		2DA112951CC29D8900B5D1C4 /* read_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = read_stream.swift; path = utilities/read_stream.swift; sourceTree = "<group>"; };
@@ -121,12 +121,12 @@
 		2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipartDataBuilder.h; sourceTree = "<group>"; };
 		2DD5B7981B1B7C9100238EA1 /* MultipartDataBuilderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultipartDataBuilderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD5B79E1B1B7C9100238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
-		2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartDataBuilderSpec.swift; sourceTree = "<group>"; };
+		2DD5B79F1B1B7C9100238EA1 /* multipart_form_spec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = multipart_form_spec.swift; sourceTree = "<group>"; };
 		2DD5B7AE1B1B7CB500238EA1 /* MultipartDataBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultipartDataBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD5B7B11B1B7CB500238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
 		2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
-		2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_form.swift; sourceTree = "<group>"; };
+		2DD5B7CE1B1B7DC600238EA1 /* multipart_form.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_form.swift; sourceTree = "<group>"; };
 		2DD5B7D11B1B7E3600238EA1 /* NSCharacterSet+MIME.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSCharacterSet+MIME.swift"; sourceTree = "<group>"; };
 		2DD5B7DB1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableURLRequest+MultipartDataBuilder.swift"; sourceTree = "<group>"; };
 		2DD616161BC41F3500B6FE9D /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -174,8 +174,8 @@
 				2DA112921CC29ADD00B5D1C4 /* Fields */,
 				2DBAA74C1CC0E63B007F02FB /* Protocols */,
 				2DD5B7DE1B1B846400238EA1 /* Extensions */,
-				2DD5B7CE1B1B7DC600238EA1 /* multipart_data_form.swift */,
-				2D2395CF1CA0A80E003C2A65 /* multipart_input_stream.swift */,
+				2DD5B7CE1B1B7DC600238EA1 /* multipart_form.swift */,
+				2D2395CF1CA0A80E003C2A65 /* multipart_form_builder.swift */,
 				2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */,
 			);
 			name = Sources;
@@ -309,7 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				2DF25AB61CB7CAF40086EB8E /* Fixtures */,
-				2DD5B79F1B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift */,
+				2DD5B79F1B1B7C9100238EA1 /* multipart_form_spec.swift */,
 				2DA112971CC3B77000B5D1C4 /* input_stream_hash_spec.swift */,
 			);
 			name = Tests;
@@ -458,12 +458,12 @@
 				2DE906301CBFBA92003008A6 /* asset_data_source.swift in Sources */,
 				2DBAA7581CC0F02C007F02FB /* multipart_stream_field.swift in Sources */,
 				2DE906321CBFBEBC003008A6 /* stream_data_source.swift in Sources */,
-				2DD5B7CF1B1B7DC600238EA1 /* multipart_data_form.swift in Sources */,
+				2DD5B7CF1B1B7DC600238EA1 /* multipart_form.swift in Sources */,
 				2DBAA7501CC0E747007F02FB /* multipart_static_field.swift in Sources */,
 				2DD5B7DC1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
 				2DBAA7561CC0EF52007F02FB /* multipart_data_field.swift in Sources */,
 				2DD5B7D21B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */,
-				2D2395D01CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */,
+				2D2395D01CA0A80E003C2A65 /* multipart_form_builder.swift in Sources */,
 				2DBAA74E1CC0E666007F02FB /* multipart_field.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -472,7 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DD5B7A01B1B7C9100238EA1 /* MultipartDataBuilderSpec.swift in Sources */,
+				2DD5B7A01B1B7C9100238EA1 /* multipart_form_spec.swift in Sources */,
 				2DA112991CC3B84D00B5D1C4 /* input_stream_hash_spec.swift in Sources */,
 				2DD5B7D61B1B7FEB00238EA1 /* NSCharacterSet+MIME.swift in Sources */,
 			);
@@ -483,10 +483,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */,
-				2DD5B7D01B1B7DC600238EA1 /* multipart_data_form.swift in Sources */,
+				2DD5B7D01B1B7DC600238EA1 /* multipart_form.swift in Sources */,
 				2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
 				2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */,
-				2D2395D11CA0A80E003C2A65 /* multipart_input_stream.swift in Sources */,
+				2D2395D11CA0A80E003C2A65 /* multipart_form_builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
