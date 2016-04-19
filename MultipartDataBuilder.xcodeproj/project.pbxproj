@@ -107,7 +107,7 @@
 		2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		2D2395CF1CA0A80E003C2A65 /* multipart_form_builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_form_builder.swift; sourceTree = "<group>"; };
 		2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input_stream_hash.swift; sourceTree = "<group>"; };
-		2D84CC771CBD3F7C00E6EC4A /* module.map */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.map; path = supporting_files/module.map; sourceTree = "<group>"; };
+		2D84CC771CBD3F7C00E6EC4A /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = supporting_files/module.modulemap; sourceTree = "<group>"; };
 		2DA112951CC29D8900B5D1C4 /* read_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = read_stream.swift; path = utilities/read_stream.swift; sourceTree = "<group>"; };
 		2DA112971CC3B77000B5D1C4 /* input_stream_hash_spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input_stream_hash_spec.swift; sourceTree = "<group>"; };
 		2DBAA74D1CC0E666007F02FB /* multipart_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_field.swift; sourceTree = "<group>"; };
@@ -225,7 +225,7 @@
 		2DD5B7831B1B7C9100238EA1 = {
 			isa = PBXGroup;
 			children = (
-				2D84CC771CBD3F7C00E6EC4A /* module.map */,
+				2D84CC771CBD3F7C00E6EC4A /* module.modulemap */,
 				2DD616161BC41F3500B6FE9D /* LICENSE */,
 				2DD616171BC41F3500B6FE9D /* README.md */,
 				2D763D441BC3544700AD8CA9 /* Sources */,
@@ -603,7 +603,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.map";
+				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
@@ -623,7 +623,7 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.map";
+				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
