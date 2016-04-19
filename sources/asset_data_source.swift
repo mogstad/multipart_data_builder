@@ -4,37 +4,25 @@ import Photos
 
 class AssetDataSource: ChunkDataSource {
 
-  let source: PHAsset
-  let key: String
-  let asset: PHAssetResource?
+  let name: String
+  let asset: PHAssetResource
+  let contentType: String
   var request: PHAssetResourceDataRequestID?
 
-  init(key: String, source: PHAsset) {
-    self.source = source
-    self.key = key
-    let assets = PHAssetResource.assetResourcesForAsset(source)
-    let index = assets.indexOf { asset -> Bool in
-      let primaryType = asset.type == .Video || asset.type == .Photo || asset.type == .Audio
-      return primaryType
-    }
-    if let index = index {
-      self.asset = assets[index]
-    } else {
-      self.asset = nil
-    }
+  init(name: String, contentType: String, asset: PHAssetResource) {
+    self.asset = asset
+    self.contentType = contentType
+    self.name = name
   }
 
   func write(outputStream: NSOutputStream, completeHandler: AssetDataSourceCompleteHandler) {
-    guard let asset = self.asset else {
-      return completeHandler(nil)
-    }
     do {
-      try self.writePrologue(asset, outputStream: outputStream)
+      try self.writePrologue(self.asset, outputStream: outputStream)
     } catch {
       return completeHandler(error)
     }
 
-    self.request = PHAssetResourceManager.defaultManager().requestDataForAssetResource(asset,
+    self.request = PHAssetResourceManager.defaultManager().requestDataForAssetResource(self.asset,
       options: nil,
       dataReceivedHandler: { data in
         do {
@@ -56,15 +44,9 @@ class AssetDataSource: ChunkDataSource {
   }
 
   private func writePrologue(resource: PHAssetResource, outputStream: NSOutputStream) throws {
-    let contentDisposition = "Content-Disposition: form-data; name=\"\(encode(self.key))\"; filename=\"\(encode(resource.originalFilename))\""
-    let contentType: String
-    if let mimeType = UTTypeCopyPreferredTagWithClass(resource.uniformTypeIdentifier, kUTTagClassMIMEType) {
-      contentType = mimeType.takeRetainedValue() as String
-    } else {
-      contentType = "application/octet-stream"
-    }
+    let contentDisposition = "Content-Disposition: form-data; name=\"\(encode(self.name))\"; filename=\"\(encode(resource.originalFilename))\""
 
-    let contentTypeHeader = "Content-Type: \(contentType)"
+    let contentTypeHeader = "Content-Type: \(self.contentType)"
     let prologue = merge([
       toData(contentDisposition),
       MutlipartFormCRLFData,
