@@ -1,13 +1,13 @@
 Pod::Spec.new do |spec|
   spec.name = "MultipartDataBuilder"
-  spec.version = "3.0.0-alpha1"
+  spec.version = "3.0.0-alpha2"
   spec.license = "MIT"
   spec.summary = "Micro framework for creating multipart forms"
   spec.homepage = "https://github.com/mogstad/multipart_data_builder"
   spec.authors = { "Bjarne Mogstad" => "me@mogstad.co" }
   spec.source = { 
     :git => "https://github.com/mogstad/multipart_data_builder.git", 
-    :branch => "streams"
+    :tag => "v3.0.0-alpha2"
   }
   spec.module_map = "supporting_files/module.map"
   spec.ios.deployment_target = "9.0"
