@@ -21,6 +21,8 @@
 		2DBAA7541CC0E86C007F02FB /* chunk_datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7531CC0E86C007F02FB /* chunk_datasource.swift */; };
 		2DBAA7561CC0EF52007F02FB /* multipart_data_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7551CC0EF52007F02FB /* multipart_data_field.swift */; };
 		2DBAA7581CC0F02C007F02FB /* multipart_stream_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7571CC0F02C007F02FB /* multipart_stream_field.swift */; };
+		2DD238851CDA83F90008FB1A /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD238841CDA83F90008FB1A /* CommonCrypto.framework */; };
+		2DD238891CDA84CF0008FB1A /* CommonCrypto.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD238841CDA83F90008FB1A /* CommonCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2DD5B7931B1B7C9100238EA1 /* MultipartDataBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2DD5B7991B1B7C9100238EA1 /* MultipartDataBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */; };
 		2DD5B7A01B1B7C9100238EA1 /* multipart_form_spec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD5B79F1B1B7C9100238EA1 /* multipart_form_spec.swift */; };
@@ -61,6 +63,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2DD238891CDA84CF0008FB1A /* CommonCrypto.framework in Copy Frameworks */,
 				2DD5B7D91B1B805F00238EA1 /* Nimble.framework in Copy Frameworks */,
 				2DD5B7DA1B1B805F00238EA1 /* Quick.framework in Copy Frameworks */,
 			);
@@ -107,7 +110,6 @@
 		2D1EAFD11BEFC50D006AA9A0 /* utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = utilities.swift; sourceTree = "<group>"; };
 		2D2395CF1CA0A80E003C2A65 /* multipart_form_builder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_form_builder.swift; sourceTree = "<group>"; };
 		2D84CC731CBD2C2900E6EC4A /* input_stream_hash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input_stream_hash.swift; sourceTree = "<group>"; };
-		2D84CC771CBD3F7C00E6EC4A /* module.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; name = module.modulemap; path = supporting_files/module.modulemap; sourceTree = "<group>"; };
 		2DA112951CC29D8900B5D1C4 /* read_stream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = read_stream.swift; path = utilities/read_stream.swift; sourceTree = "<group>"; };
 		2DA112971CC3B77000B5D1C4 /* input_stream_hash_spec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = input_stream_hash_spec.swift; sourceTree = "<group>"; };
 		2DBAA74D1CC0E666007F02FB /* multipart_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_field.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		2DBAA7531CC0E86C007F02FB /* chunk_datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chunk_datasource.swift; sourceTree = "<group>"; };
 		2DBAA7551CC0EF52007F02FB /* multipart_data_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_data_field.swift; sourceTree = "<group>"; };
 		2DBAA7571CC0F02C007F02FB /* multipart_stream_field.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = multipart_stream_field.swift; sourceTree = "<group>"; };
+		2DD238841CDA83F90008FB1A /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CommonCrypto.framework; sourceTree = "<group>"; };
 		2DD5B78D1B1B7C9100238EA1 /* MultipartDataBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MultipartDataBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD5B7911B1B7C9100238EA1 /* info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = info.plist; sourceTree = "<group>"; };
 		2DD5B7921B1B7C9100238EA1 /* MultipartDataBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultipartDataBuilder.h; sourceTree = "<group>"; };
@@ -143,6 +146,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2DD238851CDA83F90008FB1A /* CommonCrypto.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +229,6 @@
 		2DD5B7831B1B7C9100238EA1 = {
 			isa = PBXGroup;
 			children = (
-				2D84CC771CBD3F7C00E6EC4A /* module.modulemap */,
 				2DD616161BC41F3500B6FE9D /* LICENSE */,
 				2DD616171BC41F3500B6FE9D /* README.md */,
 				2D763D441BC3544700AD8CA9 /* Sources */,
@@ -276,6 +279,7 @@
 		2DD5B7C71B1B7CE700238EA1 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				2DD238841CDA83F90008FB1A /* CommonCrypto.framework */,
 				2DD5B7C81B1B7D5E00238EA1 /* Nimble.framework */,
 				2DD5B7C91B1B7D5E00238EA1 /* Quick.framework */,
 			);
@@ -599,11 +603,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/iOS/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
@@ -619,11 +626,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "$(SRCROOT)/supporting_files/iOS/info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "${SRCROOT}/supporting_files/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;

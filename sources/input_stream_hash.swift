@@ -1,5 +1,5 @@
 import Foundation
-import MultipartDataBuilder.CommonDigest
+import CommonCrypto
 
 /// Effectively creates a MD5 hash of an input stream.
 ///
