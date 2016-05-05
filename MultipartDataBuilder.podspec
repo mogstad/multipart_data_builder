@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "MultipartDataBuilder"
-  spec.version = "3.0.0-alpha2"
+  spec.version = "3.0.0-alpha3"
   spec.license = "MIT"
   spec.summary = "Micro framework for creating multipart forms"
   spec.homepage = "https://github.com/mogstad/multipart_data_builder"
@@ -9,9 +9,11 @@ Pod::Spec.new do |spec|
   }
   spec.source = { 
     :git => "https://github.com/mogstad/multipart_data_builder.git", 
-    :tag => "v3.0.0-alpha2"
+    :tag => "v3.0.0-alpha3"
   }
-  spec.ios.deployment_target = "9.0"
+  spec.platforms = {
+    :ios => "9.0"
+  }
   spec.ios.frameworks = "MobileCoreServices"
   spec.dependencies = {
     "libCommonCrypto" => ["~> 0.1"]
