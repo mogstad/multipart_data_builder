@@ -27,13 +27,21 @@ class AssetDataSource: ChunkDataSource {
       dataReceivedHandler: { data in
         do {
           try self.writeData(data, outputStream: outputStream)
-          try self.writeData(MutlipartFormCRLFData, outputStream: outputStream)
         } catch {
           completeHandler(error)
         }
       },
       completionHandler: { error in
-        completeHandler(error)
+        if let error = error {
+          completeHandler(error)
+        } else {
+          do {
+            try self.writeData(MutlipartFormCRLFData, outputStream: outputStream)
+            completeHandler(error)
+          } catch {
+            completeHandler(error)
+          }
+        }
     })
   }
 
