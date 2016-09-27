@@ -45,8 +45,8 @@ class AssetDataSource: ChunkDataSource {
         exportSession.outputFileType = fileType
         let date = NSDate().timeIntervalSince1970
         let outputURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent("temp-\(date).mov")
-        if NSFileManager.defaultManager().fileExistsAtPath(outputURL.path!) {
-            let _ = try? NSFileManager.defaultManager().removeItemAtURL(outputURL)
+        if NSFileManager.defaultManager().fileExistsAtPath(outputURL!.path!) {
+            let _ = try? NSFileManager.defaultManager().removeItemAtURL(outputURL!)
         }
         exportSession.outputURL = outputURL
         exportSession.exportAsynchronouslyWithCompletionHandler({ 
@@ -55,7 +55,7 @@ class AssetDataSource: ChunkDataSource {
             return completeHandler(Error.ExportSessionFailed)
           }
 
-          let inputStream = NSInputStream(URL: outputURL)!
+          let inputStream = NSInputStream(URL: outputURL!)!
           do {
             try self.writePrologue(self.asset, contentType: contentTypeForUTI(fileType), outputStream: outputStream)
             try self.writeStream(inputStream, outputStream: outputStream)

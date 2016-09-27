@@ -44,6 +44,13 @@
 		2DE906341CBFCD08003008A6 /* write_output_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE906331CBFCD08003008A6 /* write_output_stream.swift */; };
 		2DF25AB91CB7CB4C0086EB8E /* walter.png in Copy Fixtures */ = {isa = PBXBuildFile; fileRef = 2DF25AB71CB7CB310086EB8E /* walter.png */; };
 		2DF25ABB1CB804AF0086EB8E /* text.txt in Copy Fixtures */ = {isa = PBXBuildFile; fileRef = 2DF25ABA1CB803940086EB8E /* text.txt */; };
+		D4F19CBC1D9ACD4E002048D1 /* multipart_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA74D1CC0E666007F02FB /* multipart_field.swift */; };
+		D4F19CBD1D9ACD5D002048D1 /* chunk_datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7531CC0E86C007F02FB /* chunk_datasource.swift */; };
+		D4F19CBE1D9ACD6C002048D1 /* stream_data_source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE906311CBFBEBC003008A6 /* stream_data_source.swift */; };
+		D4F19CBF1D9ACD7C002048D1 /* read_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA112951CC29D8900B5D1C4 /* read_stream.swift */; };
+		D4F19CC01D9ACD84002048D1 /* write_output_stream.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DE906331CBFCD08003008A6 /* write_output_stream.swift */; };
+		D4F19CC11D9ACD8A002048D1 /* multipart_static_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA74F1CC0E747007F02FB /* multipart_static_field.swift */; };
+		D4F19CC21D9ACD95002048D1 /* multipart_stream_field.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBAA7571CC0F02C007F02FB /* multipart_stream_field.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -415,14 +422,16 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Flow;
 				TargetAttributes = {
 					2DD5B78C1B1B7C9100238EA1 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 					2DD5B7971B1B7C9100238EA1 = {
 						CreatedOnToolsVersion = 6.3.2;
+						LastSwiftMigration = 0800;
 					};
 					2DD5B7AD1B1B7CB500238EA1 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -486,11 +495,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4F19CC01D9ACD84002048D1 /* write_output_stream.swift in Sources */,
+				D4F19CBE1D9ACD6C002048D1 /* stream_data_source.swift in Sources */,
+				D4F19CBD1D9ACD5D002048D1 /* chunk_datasource.swift in Sources */,
+				D4F19CC21D9ACD95002048D1 /* multipart_stream_field.swift in Sources */,
 				2D1EAFD31BEFC50D006AA9A0 /* utilities.swift in Sources */,
+				D4F19CBF1D9ACD7C002048D1 /* read_stream.swift in Sources */,
 				2DD5B7D01B1B7DC600238EA1 /* multipart_form.swift in Sources */,
 				2DD5B7DD1B1B829400238EA1 /* NSMutableURLRequest+MultipartDataBuilder.swift in Sources */,
+				D4F19CC11D9ACD8A002048D1 /* multipart_static_field.swift in Sources */,
 				2DD5B7D31B1B7E3600238EA1 /* NSCharacterSet+MIME.swift in Sources */,
 				2D2395D11CA0A80E003C2A65 /* multipart_form_builder.swift in Sources */,
+				D4F19CBC1D9ACD4E002048D1 /* multipart_field.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -518,8 +534,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -567,8 +585,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -588,6 +608,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -599,6 +620,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -615,6 +637,7 @@
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -622,6 +645,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -637,6 +661,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.getflow.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = MultipartDataBuilder;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -655,6 +680,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getflow.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -669,6 +695,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.getflow.tests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -696,6 +723,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -717,6 +745,7 @@
 				PRODUCT_NAME = MultipartDataBuilder;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
