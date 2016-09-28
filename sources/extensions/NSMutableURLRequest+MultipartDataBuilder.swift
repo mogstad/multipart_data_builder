@@ -6,8 +6,8 @@ public extension NSMutableURLRequest {
   ///
   /// - parameter data: the multipart for as NSData
   /// - parameter boundary: the boundary used to build the form
-  public func setMultipartBody(data: NSData, boundary: String) {
-    self.HTTPBody = data
+  public func setMultipartBody(_ data: Data, boundary: String) {
+    self.httpBody = data
     self.setValue("multipart/form-data; boundary=\(boundary)",
       forHTTPHeaderField: "Content-Type")
   }
@@ -16,8 +16,8 @@ public extension NSMutableURLRequest {
   ///
   /// - parameter stream: the multipart form as NSInputStream
   /// - parameter boundary: the boundary used to build the form
-  public func setMultipartStream(stream: NSInputStream, boundary: String) {
-    self.HTTPBodyStream = stream
+  public func setMultipartStream(_ stream: InputStream, boundary: String) {
+    self.httpBodyStream = stream
     self.setValue("multipart/form-data; boundary=\(boundary)",
       forHTTPHeaderField: "Content-Type")
   }

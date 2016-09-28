@@ -3,14 +3,14 @@ import Quick
 import Nimble
 import MultipartDataBuilder
 
-func loadFile(path: String) -> String {
-  return try! NSString(contentsOfFile: path, encoding: NSUTF8StringEncoding) as String
+func loadFile(_ path: String) -> String {
+  return try! NSString(contentsOfFile: path, encoding: String.Encoding.utf8.rawValue) as String
 }
 
-func loadFixture(name: String, ofType type: String) -> NSData {
-  let bundle = NSBundle(identifier: "com.getflow.tests")
+func loadFixture(_ name: String, ofType type: String) -> Data {
+  let bundle = Bundle(identifier: "com.getflow.tests")
   print(bundle?.bundlePath)
-  return NSData(contentsOfFile: bundle!.pathForResource(name, ofType: type)!)!
+  return (try! Data(contentsOf: URL(fileURLWithPath: bundle!.path(forResource: name, ofType: type)!)))
 }
 
 
@@ -85,9 +85,9 @@ class MultipartFormSpec: QuickSpec {
     describe("streams of data") {
 
       beforeEach {
-        let bundle = NSBundle(identifier: "com.getflow.tests")!
-        let path = bundle.pathForResource("text", ofType: "txt")!
-        let stream = NSInputStream(fileAtPath: path)!
+        let bundle = Bundle(identifier: "com.getflow.tests")!
+        let path = bundle.path(forResource: "text", ofType: "txt")!
+        let stream = InputStream(fileAtPath: path)!
         builder.appendFormData("file",
           stream: stream,
           fileName: "text.txt",

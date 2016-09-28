@@ -1,9 +1,9 @@
 import Foundation
 
-public typealias AssetDataSourceCompleteHandler = (ErrorType?) -> Void
+public typealias AssetDataSourceCompleteHandler = (Error?) -> Void
 
 public protocol ChunkDataSource {
-  func write(outputStream: NSOutputStream, completeHandler: AssetDataSourceCompleteHandler)
+  func write(_ outputStream: OutputStream, completeHandler: @escaping AssetDataSourceCompleteHandler)
   func cancel()
 }
 

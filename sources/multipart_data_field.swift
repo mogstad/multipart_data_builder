@@ -3,11 +3,11 @@ import Foundation
 public struct MultipartDataField: MultipartField {
 
   public let name: String
-  public let content: NSData
+  public let content: Data
   public let fileName: String
   public let contentType: String
 
-  public init(name: String, fileName: String, contentType: String, content: NSData) {
+  public init(name: String, fileName: String, contentType: String, content: Data) {
     self.name = name
     self.fileName = fileName
     self.contentType = contentType
@@ -26,7 +26,7 @@ public struct MultipartDataField: MultipartField {
       self.content,
       MutlipartFormCRLFData
     ])
-    return StreamDataSource(streams: [NSInputStream(data: data)])
+    return StreamDataSource(streams: [InputStream(data: data)])
   }
   
 }

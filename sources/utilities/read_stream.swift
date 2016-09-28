@@ -2,19 +2,19 @@ import Foundation
 
 private let streamBufferSize = 4096
 
-enum InputStreamError: ErrorType {
-  case ReadError
+enum InputStreamError: Error {
+  case readError
 }
 
-func readStream(stream: NSInputStream, read: (buffer: [UInt8]) throws -> Void) throws {
+func readStream(_ stream: InputStream, read: (_ buffer: [UInt8]) throws -> Void) throws {
   stream.open()
   defer { stream.close() }
 
   while stream.hasBytesAvailable {
-    var buffer = Array<UInt8>(count: streamBufferSize, repeatedValue: 0)
+    var buffer = Array<UInt8>(repeating: 0, count: streamBufferSize)
     let bytesRead = stream.read(&buffer, maxLength: streamBufferSize)
     if bytesRead < 0 {
-      throw InputStreamError.ReadError
+      throw InputStreamError.readError
     }
 
     if let streamError = stream.streamError {
@@ -25,6 +25,6 @@ func readStream(stream: NSInputStream, read: (buffer: [UInt8]) throws -> Void) t
       buffer = Array(buffer[0..<bytesRead])
     }
 
-    try read(buffer: buffer)
+    try read(buffer)
   }
 }

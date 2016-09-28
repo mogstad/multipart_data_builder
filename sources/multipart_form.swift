@@ -6,7 +6,7 @@ import Foundation
 public struct MultipartForm {
 
   public let boundary: String
-  private var fields: [MultipartField] = []
+  fileprivate var fields: [MultipartField] = []
 
   public init() {
     self.boundary = "com.getflow.multipart-data-builder.\(arc4random()).\(arc4random())"
@@ -15,9 +15,9 @@ public struct MultipartForm {
   /// Builds the multipart form
   ///
   /// - returns: the built form as NSData
-  public func build(callback: (stream: NSInputStream, filePath: String) -> Void) {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-      let filePath = (NSTemporaryDirectory() as NSString).stringByAppendingPathComponent(NSUUID().UUIDString)
+  public func build(_ callback: @escaping (_ stream: InputStream, _ filePath: String) -> Void) {
+    DispatchQueue.global(qos: .background).async {
+      let filePath = (NSTemporaryDirectory() as NSString).appendingPathComponent(UUID().uuidString)
       if let builder = MultipartFormBuilder(
         filePath: filePath,
         boundary: self.boundary,
@@ -25,11 +25,11 @@ public struct MultipartForm {
       {
           builder.write() { error in
             if let _ = error {
-              let _ = try? NSFileManager.defaultManager().removeItemAtPath(filePath)
+              let _ = try? FileManager.default.removeItem(atPath: filePath)
             } else {
-              dispatch_async(dispatch_get_main_queue()) {
-                if let stream = NSInputStream(fileAtPath: filePath) {
-                  callback(stream: stream, filePath: filePath)
+              DispatchQueue.main.async {
+                if let stream = InputStream(fileAtPath: filePath) {
+                  callback(stream, filePath)
                 }
               }
             }
@@ -38,7 +38,7 @@ public struct MultipartForm {
     }
   }
 
-  mutating public func appendField(field: MultipartField) {
+  mutating public func appendField(_ field: MultipartField) {
     self.fields.append(field)
   }
 
@@ -46,7 +46,7 @@ public struct MultipartForm {
   ///
   /// - parameter name: the used form-data key
   /// - parameter value: the appended value to the form
-  mutating public func appendFormData(name: String, value: String) {
+  mutating public func appendFormData(_ name: String, value: String) {
     self.fields.append(MultipartStaticField(name: name, value: value))
   }
 
@@ -56,7 +56,7 @@ public struct MultipartForm {
   /// - parameter stream: the content as a stream
   /// - parameter fileName: file name of the file
   /// - parameter contentType: MIME content type of the embedded file
-  mutating public func appendFormData(name: String, stream: NSInputStream, fileName: String, contentType: String) {
+  mutating public func appendFormData(_ name: String, stream: InputStream, fileName: String, contentType: String) {
     self.fields.append(MultipartStreamField(
       name: name,
       fileName: fileName,
@@ -70,12 +70,12 @@ public struct MultipartForm {
   /// - parameter content: the data chunk to embed in the form
   /// - parameter fileName: file name of the file
   /// - parameter contentType: MIME content type of the embedded file
-  mutating public func appendFormData(name: String, content: NSData, fileName: String, contentType: String) {
+  mutating public func appendFormData(_ name: String, content: Data, fileName: String, contentType: String) {
     self.fields.append(MultipartStreamField(
       name: name,
       fileName: fileName,
       contentType: contentType,
-      content: NSInputStream(data: content)))
+      content: InputStream(data: content)))
   }
 
 }

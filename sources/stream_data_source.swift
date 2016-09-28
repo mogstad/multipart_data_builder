@@ -4,13 +4,13 @@ private let streamBufferSize = 1024
 
 class StreamDataSource: ChunkDataSource {
 
-  let streams: [NSInputStream]
+  let streams: [InputStream]
 
-  init(streams: [NSInputStream]) {
+  init(streams: [InputStream]) {
     self.streams = streams
   }
 
-  func write(outputStream: NSOutputStream, completeHandler: AssetDataSourceCompleteHandler) {
+  func write(_ outputStream: OutputStream, completeHandler: @escaping AssetDataSourceCompleteHandler) {
     do {
       try self.streams.forEach({ try self.writeStream($0, outputStream: outputStream) })
       completeHandler(nil)
@@ -21,7 +21,7 @@ class StreamDataSource: ChunkDataSource {
 
   // MARK: Private
 
-  private func writeStream(inputStream: NSInputStream, outputStream: NSOutputStream) throws {
+  fileprivate func writeStream(_ inputStream: InputStream, outputStream: OutputStream) throws {
     try readStream(inputStream) { buffer in
       try writeBuffer(buffer, toOutputStream: outputStream)
     }

@@ -17,7 +17,7 @@ public struct MultipartStaticField: MultipartField {
       toData(self.value),
       MutlipartFormCRLFData
     ])
-    return StreamDataSource(streams: [NSInputStream(data: data)])
+    return StreamDataSource(streams: [InputStream(data: data)])
   }
   
 }

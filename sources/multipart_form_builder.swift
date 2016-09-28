@@ -2,40 +2,40 @@ import Foundation
 
 private let streamBufferSize = 1024
 
-enum StreamError: ErrorType {
-  case InputStreamReadFailed
-  case OutputStreamWriteFailed
+enum StreamError: Error {
+  case inputStreamReadFailed
+  case outputStreamWriteFailed
 }
 
 struct MultipartFormBuilder {
 
   let fields: [MultipartField]
-  let output: NSOutputStream
+  let output: OutputStream
   
-  private let fieldBoundary: NSData
-  private let edgeBoundary: NSData
+  fileprivate let fieldBoundary: Data
+  fileprivate let edgeBoundary: Data
 
   init?(filePath: String, boundary: String, fields: [MultipartField]) {
     self.fields = fields
     self.fieldBoundary = toData("--\(boundary)\r\n")
     self.edgeBoundary = toData("--\(boundary)--\r\n")
-    if let output = NSOutputStream(toFileAtPath: filePath, append: false) {
+    if let output = OutputStream(toFileAtPath: filePath, append: false) {
       self.output = output
     } else {
       return nil
     }
   }
 
-  func write(complete: (ErrorType?) -> Void) {
+  func write(_ complete: @escaping (Error?) -> Void) {
     self.output.open()
     var dataSources = self.fields.flatMap { field -> [ChunkDataSource] in
       return [
-        StreamDataSource(streams: [NSInputStream(data: self.fieldBoundary)]),
+        StreamDataSource(streams: [InputStream(data: self.fieldBoundary)]),
         field.dataSource()
       ]
     }
 
-    let edgeDataSource = StreamDataSource(streams: [NSInputStream(data: self.edgeBoundary)])
+    let edgeDataSource = StreamDataSource(streams: [InputStream(data: self.edgeBoundary)])
     dataSources.append(edgeDataSource)
     self.writeDataSource(dataSources, outputStream: self.output, complete: { error in
       complete(error)
@@ -43,10 +43,10 @@ struct MultipartFormBuilder {
     })
   }
 
-  func writeDataSource(dataSources: [ChunkDataSource], outputStream: NSOutputStream, complete: (ErrorType?) -> Void) {
+  func writeDataSource(_ dataSources: [ChunkDataSource], outputStream: OutputStream, complete: @escaping (Error?) -> Void) {
     var dataSources = dataSources
     if let item = dataSources.first {
-      dataSources.removeAtIndex(0)
+      dataSources.remove(at: 0)
       item.write(outputStream, completeHandler: { error in
         if let error = error {
           complete(error)

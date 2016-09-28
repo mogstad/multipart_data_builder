@@ -1,9 +1,9 @@
 import Photos
 import MobileCoreServices
 
-func primaryAssetResource(resources: [PHAssetResource]) -> PHAssetResource? {
-  let index = resources.indexOf { resource -> Bool in
-    let primaryType = resource.type == .Video || resource.type == .Photo || resource.type == .Audio
+func primaryAssetResource(_ resources: [PHAssetResource]) -> PHAssetResource? {
+  let index = resources.index { resource -> Bool in
+    let primaryType = resource.type == .video || resource.type == .photo || resource.type == .audio
     return primaryType
   }
   guard let assetIndex = index else { return nil }
@@ -21,10 +21,10 @@ public struct MultipartAssetField: MultipartField {
     self.asset = asset
 
     switch asset.mediaType {
-    case .Video:
+    case .video:
       self.contentType = contentTypeForUTI(AVFileTypeQuickTimeMovie)
-    case .Image:
-      let resources = PHAssetResource.assetResourcesForAsset(asset)
+    case .image:
+      let resources = PHAssetResource.assetResources(for: asset)
       guard let resource = primaryAssetResource(resources) else { return nil }
       self.contentType = contentTypeForUTI(resource.uniformTypeIdentifier)
     default:

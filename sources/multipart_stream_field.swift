@@ -6,11 +6,11 @@ import Foundation
 public struct MultipartStreamField: MultipartField {
 
   public let name: String
-  public let content: NSInputStream
+  public let content: InputStream
   public let fileName: String
   public let contentType: String
 
-  public init(name: String, fileName: String, contentType: String, content: NSInputStream) {
+  public init(name: String, fileName: String, contentType: String, content: InputStream) {
     self.name = name
     self.fileName = fileName
     self.contentType = contentType
@@ -29,9 +29,9 @@ public struct MultipartStreamField: MultipartField {
     ])
 
     return StreamDataSource(streams: [
-      NSInputStream(data: prologue),
+      InputStream(data: prologue),
       self.content,
-      NSInputStream(data: MutlipartFormCRLFData)
+      InputStream(data: MutlipartFormCRLFData)
     ])
   }
   

@@ -1,6 +1,6 @@
 import Foundation
 
-func writeBuffer(buffer: [UInt8], toOutputStream outputStream: NSOutputStream) throws {
+func writeBuffer(_ buffer: [UInt8], toOutputStream outputStream: OutputStream) throws {
   var buffer = buffer
   var bytesToWrite = buffer.count
 
@@ -14,7 +14,7 @@ func writeBuffer(buffer: [UInt8], toOutputStream outputStream: NSOutputStream) t
 
       if bytesWritten < 0 {
         debugPrint("failed to write to output stream")
-        throw StreamError.OutputStreamWriteFailed
+        throw StreamError.outputStreamWriteFailed
       }
 
       bytesToWrite -= bytesWritten

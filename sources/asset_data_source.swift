@@ -2,8 +2,8 @@ import Foundation
 import MobileCoreServices
 import Photos
 
-func contentTypeForUTI(UTI: String) -> String {
-  if let mimeType = UTTypeCopyPreferredTagWithClass(UTI, kUTTagClassMIMEType) {
+func contentTypeForUTI(_ UTI: String) -> String {
+  if let mimeType = UTTypeCopyPreferredTagWithClass(UTI as CFString, kUTTagClassMIMEType) {
     return mimeType.takeRetainedValue() as String
   }
   return "application/octet-stream"
@@ -11,13 +11,13 @@ func contentTypeForUTI(UTI: String) -> String {
 
 class AssetDataSource: ChunkDataSource {
 
-  enum Error: ErrorType {
-    case NoExportSession
-    case ExportSessionFailed
-    case NoImageData
-    case NoImageUTI
-    case NoResourceAsset
-    case UnknownMediaType
+  enum Error: Swift.Error {
+    case noExportSession
+    case exportSessionFailed
+    case noImageData
+    case noImageUTI
+    case noResourceAsset
+    case unknownMediaType
   }
 
   let name: String
@@ -29,33 +29,33 @@ class AssetDataSource: ChunkDataSource {
     self.name = name
   }
 
-  func write(outputStream: NSOutputStream, completeHandler: AssetDataSourceCompleteHandler) {
-    let manager = PHImageManager.defaultManager()
+  func write(_ outputStream: OutputStream, completeHandler: @escaping AssetDataSourceCompleteHandler) {
+    let manager = PHImageManager.default()
     switch self.asset.mediaType {
-    case .Video:
+    case .video:
 
       let options = PHVideoRequestOptions()
-      options.networkAccessAllowed = true
-      manager.requestExportSessionForVideo(self.asset, options: options, exportPreset: AVAssetExportPresetHighestQuality) { (exportSession, info) in
+      options.isNetworkAccessAllowed = true
+      manager.requestExportSession(forVideo: self.asset, options: options, exportPreset: AVAssetExportPresetHighestQuality) { (exportSession, info) in
         guard let exportSession = exportSession else {
-          return completeHandler(Error.NoExportSession)
+          return completeHandler(Error.noExportSession)
         }
 
         let fileType = AVFileTypeQuickTimeMovie
         exportSession.outputFileType = fileType
-        let date = NSDate().timeIntervalSince1970
-        let outputURL = NSURL(fileURLWithPath: NSTemporaryDirectory()).URLByAppendingPathComponent("temp-\(date).mov")
-        if NSFileManager.defaultManager().fileExistsAtPath(outputURL!.path!) {
-            let _ = try? NSFileManager.defaultManager().removeItemAtURL(outputURL!)
+        let date = Date().timeIntervalSince1970
+        let outputURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temp-\(date).mov")
+        if FileManager.default.fileExists(atPath: outputURL.path) {
+            let _ = try? FileManager.default.removeItem(at: outputURL)
         }
         exportSession.outputURL = outputURL
-        exportSession.exportAsynchronouslyWithCompletionHandler({ 
+        exportSession.exportAsynchronously(completionHandler: { 
 
-          guard case AVAssetExportSessionStatus.Completed = exportSession.status else {
-            return completeHandler(Error.ExportSessionFailed)
+          guard case AVAssetExportSessionStatus.completed = exportSession.status else {
+            return completeHandler(Error.exportSessionFailed)
           }
 
-          let inputStream = NSInputStream(URL: outputURL!)!
+          let inputStream = InputStream(url: outputURL)!
           do {
             try self.writePrologue(self.asset, contentType: contentTypeForUTI(fileType), outputStream: outputStream)
             try self.writeStream(inputStream, outputStream: outputStream)
@@ -66,16 +66,16 @@ class AssetDataSource: ChunkDataSource {
           }
         })
       }
-    case .Image:
+    case .image:
       let options = PHImageRequestOptions()
-      options.networkAccessAllowed = true
-      self.request = manager.requestImageDataForAsset(self.asset, options: options) { (data, uti, orientation, info) in
+      options.isNetworkAccessAllowed = true
+      self.request = manager.requestImageData(for: self.asset, options: options) { (data, uti, orientation, info) in
         guard let data = data else {
-          return completeHandler(Error.NoImageData)
+          return completeHandler(Error.noImageData)
         }
 
         guard let uti = uti else {
-          return completeHandler(Error.NoImageUTI)
+          return completeHandler(Error.noImageUTI)
         }
 
         do {
@@ -88,19 +88,19 @@ class AssetDataSource: ChunkDataSource {
         }
       }
     default:
-      completeHandler(Error.UnknownMediaType)
+      completeHandler(Error.unknownMediaType)
     }
   }
 
   func cancel() {
     if let request = self.request {
-      PHAssetResourceManager.defaultManager().cancelDataRequest(request)
+      PHAssetResourceManager.default().cancelDataRequest(request)
     }
   }
 
-  private func writePrologue(asset: PHAsset, contentType: String, outputStream: NSOutputStream) throws {
-    let resources = PHAssetResource.assetResourcesForAsset(asset)
-    guard let resource = primaryAssetResource(resources) else { throw Error.NoResourceAsset }
+  fileprivate func writePrologue(_ asset: PHAsset, contentType: String, outputStream: OutputStream) throws {
+    let resources = PHAssetResource.assetResources(for: asset)
+    guard let resource = primaryAssetResource(resources) else { throw Error.noResourceAsset }
     let contentDisposition = "Content-Disposition: form-data; name=\"\(encode(self.name))\"; filename=\"\(encode(resource.originalFilename))\""
 
     let contentTypeHeader = "Content-Type: \(contentType)"
@@ -115,13 +115,13 @@ class AssetDataSource: ChunkDataSource {
     try self.writeData(prologue, outputStream: outputStream)
   }
 
-  private func writeData(data: NSData, outputStream: NSOutputStream) throws {
-    var buffer = Array<UInt8>(count: data.length / sizeof(UInt8), repeatedValue: 0)
-    data.getBytes(&buffer, length: data.length * sizeof(UInt8))
+  fileprivate func writeData(_ data: Data, outputStream: OutputStream) throws {
+    var buffer = Array<UInt8>(repeating: 0, count: data.count / MemoryLayout<UInt8>.size)
+    (data as NSData).getBytes(&buffer, length: data.count * MemoryLayout<UInt8>.size)
     try writeBuffer(buffer, toOutputStream: outputStream)
   }
 
-  private func writeStream(inputStream: NSInputStream, outputStream: NSOutputStream) throws {
+  fileprivate func writeStream(_ inputStream: InputStream, outputStream: OutputStream) throws {
     try readStream(inputStream) { buffer in
       try writeBuffer(buffer, toOutputStream: outputStream)
     }
