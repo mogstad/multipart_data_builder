@@ -1,7 +1,7 @@
 import Foundation
 
 private let MultipartFormCRLF = "\r\n"
-private let MutlipartFormCRLFData = MultipartFormCRLF.dataUsingEncoding(NSUTF8StringEncoding)!
+private let MutlipartFormCRLFData = MultipartFormCRLF.data(using: String.Encoding.utf8)!
 
 /// MultipartDataBuilder builds a multipart form (RFC2388) form both key value 
 /// pairs and chunks of data as embedded files.
@@ -23,13 +23,13 @@ public struct MultipartDataBuilder {
     let data = NSMutableData()
 
     for field in self.fields {
-      data.appendData(self.toData("--\(self.boundary)"))
-      data.appendData(MutlipartFormCRLFData)
-      data.appendData(field)
+      data.append(self.toData(string: "--\(self.boundary)") as Data)
+      data.append(MutlipartFormCRLFData)
+      data.append(field as Data)
     }
 
-    data.appendData(self.toData("--\(self.boundary)--"))
-    data.appendData(MutlipartFormCRLFData)
+    data.append(self.toData(string: "--\(self.boundary)--") as Data)
+    data.append(MutlipartFormCRLFData)
 
     return (data.copy() as! NSData)
   }
@@ -39,13 +39,13 @@ public struct MultipartDataBuilder {
   /// - parameter key: the used form-data key
   /// - parameter value: the appended value to the form
   mutating public func appendFormData(key: String, value: String) {
-    let content = "Content-Disposition: form-data; name=\"\(encode(key))\""
-    let data = self.merge([
-      self.toData(content),
-      MutlipartFormCRLFData,
-      MutlipartFormCRLFData,
-      self.toData(value),
-      MutlipartFormCRLFData
+    let content = "Content-Disposition: form-data; name=\"\(encode(string: key))\""
+    let data = self.merge(chunks: [
+      self.toData(string: content),
+      MutlipartFormCRLFData as NSData,
+      MutlipartFormCRLFData as NSData,
+      self.toData(string: value),
+      MutlipartFormCRLFData as NSData
     ])
     self.fields.append(data)
   }
@@ -57,16 +57,16 @@ public struct MultipartDataBuilder {
   /// - parameter fileName: file name of the file
   /// - parameter contentType: MIME content type of the embedded file
   mutating public func appendFormData(name: String, content: NSData, fileName: String, contentType: String) {
-    let contentDisposition = "Content-Disposition: form-data; name=\"\(self.encode(name))\"; filename=\"\(self.encode(fileName))\""
+    let contentDisposition = "Content-Disposition: form-data; name=\"\(self.encode(string: name))\"; filename=\"\(self.encode(string: fileName))\""
     let contentTypeHeader = "Content-Type: \(contentType)"
-    let data = self.merge([
-      self.toData(contentDisposition),
-      MutlipartFormCRLFData,
-      self.toData(contentTypeHeader),
-      MutlipartFormCRLFData,
-      MutlipartFormCRLFData,
+    let data = self.merge(chunks: [
+      self.toData(string: contentDisposition),
+      MutlipartFormCRLFData as NSData,
+      self.toData(string: contentTypeHeader),
+      MutlipartFormCRLFData as NSData,
+      MutlipartFormCRLFData as NSData,
       content,
-      MutlipartFormCRLFData
+      MutlipartFormCRLFData as NSData
     ])
     self.fields.append(data)
   }
@@ -75,17 +75,17 @@ public struct MultipartDataBuilder {
 
   private func encode(string: String) -> String {
     let characterSet = NSCharacterSet.MIMECharacterSet()
-    return string.stringByAddingPercentEncodingWithAllowedCharacters(characterSet)!
+	return string.addingPercentEncoding(withAllowedCharacters: characterSet as CharacterSet)!
   }
 
   private func toData(string: String) -> NSData {
-    return string.dataUsingEncoding(NSUTF8StringEncoding)!
+    return string.data(using: String.Encoding.utf8)! as NSData
   }
 
   private func merge(chunks: [NSData]) -> NSData {
     let data = NSMutableData()
     for chunk in chunks {
-      data.appendData(chunk)
+      data.append(chunk as Data)
     }
     return data.copy() as! NSData
   }

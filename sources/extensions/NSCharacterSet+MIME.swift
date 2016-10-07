@@ -3,8 +3,8 @@ import Foundation
 extension NSCharacterSet {
 
   class func MIMECharacterSet() -> NSCharacterSet {
-    let characterSet = NSCharacterSet(charactersInString: "\"\n\r")
-    return characterSet.invertedSet
+    let characterSet = NSCharacterSet(charactersIn: "\"\n\r")
+    return characterSet.inverted as NSCharacterSet
   }
   
 }
