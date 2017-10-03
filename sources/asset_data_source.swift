@@ -41,7 +41,11 @@ class AssetDataSource: ChunkDataSource {
           return completeHandler(Error.noExportSession)
         }
 
-        let fileType = AVFileTypeQuickTimeMovie
+        #if swift (>=4.0)
+          let fileType = AVFileType.mov
+        #else
+          let fileType = AVFileTypeQuickTimeMovie
+        #endif
         exportSession.outputFileType = fileType
         let date = Date().timeIntervalSince1970
         let outputURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("temp-\(date).mov")
@@ -57,7 +61,11 @@ class AssetDataSource: ChunkDataSource {
 
           let inputStream = InputStream(url: outputURL)!
           do {
-            try self.writePrologue(self.asset, contentType: contentTypeForUTI(fileType), outputStream: outputStream)
+            #if swift (>=4.0)
+              try self.writePrologue(self.asset, contentType: contentTypeForUTI(fileType.rawValue), outputStream: outputStream)
+            #else
+              try self.writePrologue(self.asset, contentType: contentTypeForUTI(fileType), outputStream: outputStream)
+            #endif
             try self.writeStream(inputStream, outputStream: outputStream)
             try self.writeData(MutlipartFormCRLFData, outputStream: outputStream)
             completeHandler(nil)

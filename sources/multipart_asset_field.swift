@@ -22,7 +22,11 @@ public struct MultipartAssetField: MultipartField {
 
     switch asset.mediaType {
     case .video:
-      self.contentType = contentTypeForUTI(AVFileTypeQuickTimeMovie)
+      #if swift (>=4.0)
+        self.contentType = contentTypeForUTI(AVFileType.mov.rawValue)
+      #else
+        self.contentType = contentTypeForUTI(AVFileTypeQuickTimeMovie)
+      #endif
     case .image:
       let resources = PHAssetResource.assetResources(for: asset)
       guard let resource = primaryAssetResource(resources) else { return nil }
