@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   }
   spec.ios.frameworks = "MobileCoreServices"
   spec.dependencies = {
-    "CryptoSwift" => ["~> 0.7.2"]
+    "CryptoSwift" => ["~> 0.8.0"]
   }
   spec.source_files = ["sources/**/*.swift", "supporting_files/MultipartDataBuilder.h"]
   spec.requires_arc = true
